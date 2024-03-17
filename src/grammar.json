@@ -7287,42 +7287,12 @@
             "value": "@"
           },
           {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "FIELD",
-                    "name": "package",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "_package_identifier"
-                    }
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "."
-                  },
-                  {
-                    "type": "FIELD",
-                    "name": "name",
-                    "content": {
-                      "type": "SYMBOL",
-                      "name": "_component_identifier"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "FIELD",
-                "name": "name",
-                "content": {
-                  "type": "SYMBOL",
-                  "name": "_component_identifier"
-                }
-              }
-            ]
+            "type": "FIELD",
+            "name": "name",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_component_identifier"
+            }
           },
           {
             "type": "CHOICE",
@@ -7339,6 +7309,13 @@
                 "type": "BLANK"
               }
             ]
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "SYMBOL",
+              "name": "method_chain"
+            }
           },
           {
             "type": "CHOICE",
@@ -7358,6 +7335,39 @@
           }
         ]
       }
+    },
+    "method_chain": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "."
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_component_identifier"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "arguments",
+              "content": {
+                "type": "SYMBOL",
+                "name": "argument_list"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "component_render": {
       "type": "SEQ",
@@ -8346,4 +8356,3 @@
     "_simple_statement"
   ]
 }
-

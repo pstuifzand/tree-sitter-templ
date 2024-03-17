@@ -889,17 +889,17 @@
             "named": true
           }
         ]
-      },
-      "package": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "package_identifier",
-            "named": true
-          }
-        ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "method_chain",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2280,6 +2280,32 @@
         "types": [
           {
             "type": "_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "method_chain",
+    "named": true,
+    "fields": {
+      "arguments": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "argument_list",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
             "named": true
           }
         ]
